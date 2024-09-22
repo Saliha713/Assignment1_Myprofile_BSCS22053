@@ -39,4 +39,53 @@ const profileData = {
     }
 };
 
- 
+// Function to populate sections
+function populateSection() {
+    // Set the image source
+    const imageElement = document.getElementById("mypic");
+    imageElement.src = profileData.personalInfo.image.src;
+    imageElement.alt = profileData.personalInfo.image.description;
+
+    document.getElementById("myself").textContent = profileData.personalInfo.introduction;
+    document.getElementById("quote-section").innerHTML = `<p>${profileData.personalInfo.quote}</p><p class="translation">${profileData.personalInfo.translation}</p>`;
+    populateList(profileData.skills.softSkills, "soft-skills");
+    populateList(profileData.skills.hardSkills, "hard-skills");
+    populateList(profileData.projects, "projects-list");
+    populateList(profileData.awardsAndCertifications, "awards-list");
+    populateList(profileData.education, "education-list");
+
+    // Populate videos
+    const videosContainer = document.getElementById("videos");
+    profileData.videos.forEach(video => {
+        let videoElement = document.createElement("video");
+        videoElement.src = video.src;
+        videoElement.controls = true;
+        videoElement.width = 320;
+        videosContainer.appendChild(videoElement);
+    });
+
+    // Populate social media
+    const socialMediaContainer = document.getElementById("social-media");
+    const linkedInLink = document.createElement("a");
+    linkedInLink.href = profileData.socialMedia.linkedIn;
+    linkedInLink.textContent = "My LinkedIn Profile";
+    linkedInLink.target = "_blank";
+    socialMediaContainer.appendChild(linkedInLink);
+
+    // Populate contact info
+    const contactInfo = document.getElementById("contact-info");
+    contactInfo.innerHTML = `<p>Email: ${profileData.personalInfo.email}</p><p>Phone: ${profileData.personalInfo.phone}</p>`;
+}
+
+// Helper function to populate list elements
+function populateList(items, elementId) {
+    const list = document.getElementById(elementId);
+    items.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+    });
+}
+
+// Initialize profile population
+document.addEventListener("DOMContentLoaded", populateSection);
