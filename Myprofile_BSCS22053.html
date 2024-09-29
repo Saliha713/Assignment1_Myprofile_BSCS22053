@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Professional Profile showcasing skills, projects, awards, and certifications">
     <meta name="keywords" content="Professional, Profile, Skills, Projects, Awards, Certifications, Hackathons, Degrees, Trainings">
-    <meta name="author" content="Saliha Haider">
-    <title>Professional Profile</title>
+    <meta name="author" content="Your Name">
+    <title>Professional Profiles</title>
 
+    <!-- Include CSS for styling -->
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -17,13 +18,8 @@
             padding: 0;
             line-height: 1.6;
         }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #4a403a;
-            text-align:center ;
-        }
 
+        
         .navbar {
             position: fixed;
             top: 0;
@@ -54,17 +50,13 @@
             color: #2C3E1E;
         }
 
+        /* Main content */
         .content {
             margin-right: 260px;
             padding: 40px;
         }
-        .videos {
-            margin: 20px 0;
-            text-align: center;
-            word-spacing: 30px;
-          
-        }
 
+        /* Section styling */
         section {
             background-color: #e5d4c5;
             border-left: 10px solid #4a403a; 
@@ -93,28 +85,57 @@
             color: #4a403a;
         }
 
-        footer {
+        .skills, .projects, .education, .awards, .social-media {
+            margin-bottom: 40px;
+        }
+
+        .skills ul li, .projects ul li, .education ul li, .awards ul li {
+            background-color: #E3E3C3; 
+        }
+
+        .skills ul li:hover, .projects ul li:hover, .education ul li:hover, .awards ul li:hover {
+            background-color: #dac8b9; 
+        }
+
+       
+        .video1 {
+            margin: 20px 0;
             text-align: center;
-            padding: 10px;
-            background-color: #6f5748;
-            color: white;
+            word-spacing: 30px;
+          
+        }
+        
+        .social-media iframe {
+            width: 100%;
+            height: 400px;
         }
 
-        @media (max-width: 768px) {
-            .navbar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-            }
-            .content {
-                margin-right: 0;
-            }
-
+        .language-selector {
+            margin-bottom: 20px;
         }
-        #quote-section {
+
+        /* Button styles */
+        button {
+            background-color: #4a403a; 
+            color: #dac8b9; 
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #dac8b9; 
+            color: #4a403a; 
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #4a403a;
+            text-align:center ;
+        }
+        .quote {
             font-style: italic;
            
             margin: 20px;
@@ -123,27 +144,97 @@
             line-height:7px  ;
             
         }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #6f5748;
+            color: white;
+        }
         .about-container {
             display: flex;
             align-items: center;
-            justify-content: space-between; /* This will space the items apart */
+            gap: 20px; 
         }
 
-        .about-container img {
-            margin-left: 20px; /* Optional: adds space between text and image */
-            border-radius: 8px; /* Optional: rounds the corners of the image */
-        }
-        #videos {
-            display: flex;
-            justify-content: center; /* Center align the videos */
-            flex-wrap: wrap; /* Allow wrapping of videos */
-            gap: 20px; /* Add space between videos */
+        .about-img {
+            width: 20%;
+            border-radius: 8px;
+            margin-right: 20px; 
         }
 
-        #videos video {
-            margin: 10px; /* Optional: add margin around each video */
+        #myself {
+            flex: 1; 
+            text-align: justify; 
         }
 
+
+        /* Make the layout responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                width: 100%;
+                height: 70px;
+                position:relative;
+                display: flex;
+                flex-direction: row;
+                justify-content:left;
+                padding: 7px;
+                border-radius: 2px;
+                text-align: justify;
+                
+            }
+            .navbar a 
+            {width: 25px;;
+            font-size:0.7em;
+            text-align: center;
+            margin: 0px;
+            border-radius: 3px;
+    
+            }
+
+            h1
+            {font-size: 2em;}
+            .quote {
+            
+            font-size: medium;
+            
+            
+        }
+            h2{font-size: large;}
+        
+            .content {
+                margin-right: 0;
+               margin-left: 0;
+            padding: 20px;
+            }
+            section { 
+            border-radius: 2px;
+            padding: 10px;
+            margin-top: 0px;
+        }
+        #myself {
+           font-size: small;
+        }
+        .about-container {
+                flex-direction: column; 
+                text-align: center;
+            }
+            
+            .about-img {
+                margin-right: 0px; 
+                width: 30%;
+                margin-top: 0px;
+            }
+        h3{font-size: medium;}
+        li{font-size: small;}
+            
+        }
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #6f5748;
+            color: white;
+        }
+      
 
     </style>
 </head>
@@ -156,80 +247,116 @@
         <a href="#projects">Projects</a>
         <a href="#awards">Awards & Certifications</a>
         <a href="#education">Education</a>
-        <a href="#videos">Videos</a>
         <a href="#social">Social Media</a>
         <a href="#contact">Contact</a>
     </div>
 
     <header>
-        <h1>My Profile</h1>
+        <h1>Saliha Haider</h1>
     </header>
+    
+        <div class="quote">
+            "ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ"
+            <p class="translation">"(O Allah!) Guide us to the straight path."</p>
+        </div>
+    
 
     <!-- Main content -->
-    <div id="quote-section"></div>
     <div class="content">
         <!-- About me section -->
         <section id="about">
             <h2>About Me</h2>
             <div class="about-container">
-                <p id="myself"></p>
-                <img id="mypic" alt="Profile Picture" width="200" />
+                
+                <p id="myself">My name is Saliha Haider, a 20-year-old passionate learner with a drive for continuous growth and development. I am currently focused on honing my skills in data, Web development, and various programming languages, while also pursuing personal interests in calligraphy, sketching, and reading books. I have a strong aptitude for mathematics and enjoy teaching the subject.</p>
+                <img src="id.jpg" alt="mypic" class="about-img">
             </div>
         </section>
         
-        
+
         <!-- Skills section -->
         <section id="skills">
             <h2>Skills</h2>
             <h3>Soft Skills</h3>
-            <ul id="soft-skills"></ul>
+            <ul>
+                <li>Team Work</li>
+                <li>Communication</li>
+                <li>Problem-solving</li>
+            </ul>
             <h3>Hard Skills</h3>
-            <ul id="hard-skills"></ul>
+            <ul>
+                <li>Database Management</li>
+                <li>Data Analysis</li>
+                <li>C++, Python, JavaScript</li>
+            </ul>
         </section>
 
         <!-- Projects section -->
         <section id="projects">
             <h2>Projects</h2>
-            <ul id="projects-list"></ul>
+            <ul>
+                <li>Project 1: Chess game in C++</li>
+                <li>Project 2: Snake game in C++</li>
+                <li>Project 3: Paint app in python</li>
+                <li>Project 4: Arranged a bake sale</li>
+            </ul>
         </section>
 
         <!-- Awards and Certifications -->
         <section id="awards">
             <h2>Awards & Certifications</h2>
-            <ul id="awards-list"></ul>
+            <ul>
+                <li>Awarded for A+ grade in matric, Queen Mary College, Lahore</li>
+                <li>Awarded merit-based scholarship, Punjab College, Lahore</li>
+                <li>Awarded merit-based scholarship for two semsters, IT university, Lahore</li>
+            </ul>
         </section>
 
         <!-- Education section -->
         <section id="education">
             <h2>Education</h2>
-            <ul id="education-list"></ul>
+            <ul>
+                <li>Matric in Computer Science from Queen Mary College,Lahore (Completed: 2020)</li>
+                <li>Intermediate in Computer Science from Punjab College,Lahore(Completed: 2022)</li>
+                <li>Doing Bachelors in Computer Science from IT university,Lahore</li>
+            </ul>
         </section>
 
         <!-- Video content section -->
         <section id="video">
-            <h2>Videos</h2>
-            <div id="videos"></div>
+            <h2>Watch My Work</h2>
+            <div class="video1">
+                <video src="snake.mp4" width="40%"  controls >
+                </video>
+                <video src="paint.mp4" width="40%"  controls ></video>
+                </video>
+            </div>
+            
         </section>
 
         <!-- Social media feed -->
         <section id="social">
             <h2>Social Media</h2>
-           
-            <div id="social-media"> Here is my LinkedIn Account: </div>
+            <div class="social-media">
+                Here is my LinkedIn Account:
+                <a href="https://www.linkedin.com/in/saliha-haider-a34387267?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"> My Linkedln Account</a>
+                
+            </div>
         </section>
 
         <!-- Contact section -->
         <section id="contact">
             <h2>Contact</h2>
-            <div id="contact-info"></div>
+            <div class="contact">
+                <p>Email: salihahaider713@gmail.com</p>
+                <p>Phone: 03338923054</p>
+                
+            </div>
         </section>
     </div>
-
     <footer>
         <p>&copy; 2024 Saliha Haider - All Rights Reserved</p>
     </footer>
 
-    
-    <script src="profile.js"></script> 
 </body>
 </html>
